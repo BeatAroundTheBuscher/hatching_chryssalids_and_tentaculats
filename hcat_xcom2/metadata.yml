@@ -1,7 +1,7 @@
 name: "Hatching Tentaculats"
-version: 0.1
+version: "0.2"
 author: Buscher
 description: "Eggs injected by Tentaculats do not kill the soldiers instantly. Eggs can be removed with a Cure"
 id: "hcat_xcom2"
 master: "xcom2"
-requiredExtendedVersion: "7.0.0"
+requiredExtendedVersion: "7.5.8"
