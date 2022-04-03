@@ -1,0 +1,7 @@
+name: "Hatching Chryssalids"
+version: 0.1
+author: Buscher
+description: "Eggs injected by Chryssalids do not kill the soldiers instantly. Eggs can be removed with a Cure"
+id: "hcat_xcom1"
+master: "xcom1"
+requiredExtendedVersion: "7.0.0"

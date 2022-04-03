@@ -1,0 +1,64 @@
+extraStrings:
+  - type: en-US
+    strings:
+      STR_MEDI_KIT_UFOPEDIA: "The medi-kit combines a healing facility with stimulants. {NEWLINE}{NEWLINE}As we do not know the details of each Alien specimen yet, we keep a section prepared to deal with any kind of NBC weaponry the Aliens may throw at us. Once we know details about specific aliens by studying them alive and their autopsy, we can add a serum to the Medi-Kit to cure specific ailments."
+
+      STR_MEDI_KIT_ADDITIONAL: "Medi-Kit (Additional Info)"
+      STR_MEDI_KIT_ADDITIONAL_UFOPAEDIA: "In order to use the medi-kit you must face towards the soldier requiring treatment. If the soldier is stunned you must stand over the body. Click on the medi-kit icon and select 'use medi-kit' from the menu.{NEWLINE}HEALING> Red body parts show fatal wounds. Click on a body part that is wounded. Click on the 'Heal' button. One fatal wound will be cured and some health restored."
+
+      STR_MEDI_KIT_ADDITIONAL_TWO: "Medi-Kit (Additional Info)"
+      STR_MEDI_KIT_ADDITIONAL_TWO_UFOPAEDIA: "STIMULANT> This will restore energy and revive unconscious (stunned) soldiers. In order to revive an unconscious soldier you must stand directly over the body.{NEWLINE}{NEWLINE}CURE> This will cure a soldier from any NBC ailments. Charges will be available once research of specific aliens has been completed. This includes studying a live specimen as well as their autopsy."
+
+
+
+ufopaedia:
+  - id: STR_MEDI_KIT_ADDITIONAL
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_MEDI_KIT
+    text: STR_MEDI_KIT_ADDITIONAL_UFOPAEDIA
+    listOrder: 4710
+    image_id: UP052.BDY
+
+
+  - id: STR_MEDI_KIT_ADDITIONAL_TWO
+    type_id: 14
+    section: STR_WEAPONS_AND_EQUIPMENT
+    requires:
+      - STR_MEDI_KIT
+    text: STR_MEDI_KIT_ADDITIONAL_TWO_UFOPAEDIA
+    listOrder: 4720
+    image_id: UP052.BDY
+
+
+items:
+  - type: STR_MEDI_KIT
+    painKiller: 3 # for statsfornerds
+
+  - &STR_MK_ADDITIONAL
+    type: STR_MEDI_KIT_ADDITIONAL # dummy item for ufopaedia
+    size: 0.1
+    costSell: 46500
+    weight: 5
+    bigSprite: {mod: xcom2, index: 24}
+    bigSprite: {mod: xcom2, index: 24}
+    bigSprite: {mod: xcom2, index: 208}
+    battleType: 6
+    invWidth: 1
+    invHeight: 2
+    painKiller: 3
+    heal: 10
+    stimulant: 10
+    woundRecovery: 1
+    healthRecovery: 3
+    stunRecovery: 4
+    energyRecovery: 10
+    tuUse: 10
+    flatRate: true
+    listOrder: 4710 
+
+  - type: STR_MEDI_KIT_ADDITIONAL_TWO
+    refNode: *STR_MK_ADDITIONAL
+    listOrder: 4730
+
