@@ -10,6 +10,17 @@ alienRaces:
       - STR_CHRYSSALID_TERRORIST
       - STR_CHRYSSALID_TERRORIST
 
+  - id: STR_ZOMBIE
+    members:
+      - STR_ZOMBIE
+      - STR_ZOMBIE
+      - STR_ZOMBIE
+      - STR_ZOMBIE
+      - STR_ZOMBIE
+      - STR_ZOMBIE
+      - STR_ZOMBIE
+      - STR_ZOMBIE
+
 
 armors:
   - type: STR_POWER_SUIT_UC

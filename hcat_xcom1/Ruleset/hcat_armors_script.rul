@@ -7,34 +7,7 @@ armors:
         unit.setTag Tag.TURN_BECAME_ZOMBIFIED turn;
         return;
 
-      damageUnit: |
-        var ptr RuleItem damagingItem;
-        var ptr RuleDamageType damageType;
-        var int finalDamageType;
-        var int numBurningTurns;
-        var ptr RuleUnit myRuleUnit;
-        var int remainingHealth;
-
-        damaging_item.getRuleItem damagingItem;
-        damagingItem.getDamageType damageType;
-        damageType.getResistType finalDamageType;  # DT_IN == 2
-
-        unit.getHealth remainingHealth;
-        sub remainingHealth to_health;
-
-        unit.getFire numBurningTurns;
-
-        if and le remainingHealth 0 eq numBurningTurns 0 neq finalDamageType 2;
-            rules.getRuleUnit myRuleUnit "STR_CHRYSSALID_TERRORIST";
-            unit.setSpawnUnit myRuleUnit;
-            unit.setSpawnUnitInstantRespawn 1;
-        end;
-
-        debug_log "ZOMBIE_ARMOR damageUnit";
-
-        return;
-
-      damageSpecialUnit: |  # burn damage # newTurnUnit not required?
+      damageSpecialUnit: |  # damageUnit is not required
         var ptr RuleItem damagingItem;
         var ptr RuleDamageType damageType;
         var int finalDamageType;
@@ -51,13 +24,12 @@ armors:
 
         unit.getFire numBurningTurns;
 
-        if and le remainingHealth 0 eq numBurningTurns 0 neq finalDamageType 2;
-          rules.getRuleUnit myRuleUnit "STR_CHRYSSALID_TERRORIST";
-          unit.setSpawnUnit myRuleUnit;
-          unit.setSpawnUnitInstantRespawn 1;
+        if le remainingHealth 0;
+          if or ge numBurningTurns 1 eq finalDamageType 2;
+            unit.setTag Tag.DIED_BY_FIRE 1;
+            set transform_chance 0;
+          end;
         end;
-
-        debug_log "ZOMBIE_ARMOR damageSpecialUnit";
 
         return;
 
@@ -69,30 +41,54 @@ armors:
         var int turnDifference;
         var int numBurningTurns;
 
+        if neq side FACTION_HOSTILE;
+          return;
+        end;
+
+        # sanity for multi stage missions
+        # this is probably not necessary, because only current zombies have this tag
+        if eq turn 0;
+          unit.setTag Tag.TURN_BECAME_ZOMBIFIED 0;
+          return;
+        end;
+
         unit.getTag currentChance Tag.CUMULATIVE_BURST_CHANCE_PER_TURN;
         unit.getTag turnZombification Tag.TURN_BECAME_ZOMBIFIED;
 
-        # sanity for multi stage missions (probably not necessary)
-        if eq turn 0;
-          unit.setTag Tag.TURN_BECAME_ZOMBIFIED 0;
+
+
+        if eq turnZombification 0;
           return;
         end;
 
         set turnDifference turn;  # will be one on the next turn
         sub turnDifference turnZombification;
         mul currentChance turnDifference;
-
-        battle_game.randomRange randomNumber 1 100;
         unit.getFire numBurningTurns;
+        battle_game.randomRange randomNumber 1 100;
 
         if and le randomNumber currentChance eq numBurningTurns 0;
-          rules.getRuleUnit myRuleUnit "STR_CHRYSSALID_TERRORIST";
-          unit.setSpawnUnit myRuleUnit;
-          unit.setSpawnUnitInstantRespawn 1;
+          unit.setHealth 0;
         end;
 
         return;
 
       selectUnitSprite: |
         # Zombies -> Chryssalids have a whopping 18 deathFrames
+
+        var int diedByFire;
+        var int remainingHealth;
+
+        unit.getTag diedByFire Tag.DIED_BY_FIRE;
+        unit.getHealth remainingHealth;
+
+        if and eq diedByFire 1 le remainingHealth 0 eq sprite_index 72;
+          add sprite_index 100;
+        end;
+
+        if and eq diedByFire 0 le remainingHealth 0 eq sprite_index 72;
+          mul sprite_offset 6;
+        end;
+
+        add sprite_index sprite_offset;
         return sprite_index;

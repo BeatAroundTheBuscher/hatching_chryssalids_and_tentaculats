@@ -3,6 +3,7 @@ extended:
     BattleUnit:
       CURRENT_INFECTION_DAMAGE: int
       TURN_BECAME_ZOMBIFIED: int
+      DIED_BY_FIRE: int
     RuleItem:
       CAN_DO_INFECTION_DAMAGE: int
     BattleGame:

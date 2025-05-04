@@ -5,7 +5,7 @@ extraSprites:
     width: 512
     height: 240
     files:
-      0: Resources/XCOM/ZOMBIE.png # 96
+      0: Resources/XCOM/ZOMBIE.png  # 96
       100: Resources/XCF/ZOMBIE_STERILE.png
 
   - type: BIGOBS.PCK

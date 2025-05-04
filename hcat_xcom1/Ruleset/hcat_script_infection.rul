@@ -190,10 +190,12 @@ extended:
         offset: 1  # change unit color to green so player knows who's infected
         code: |
           var int infectionDamage;
+          var int currentHealth;
 
           unit.getTag infectionDamage Tag.CURRENT_INFECTION_DAMAGE;
+          unit.getHealth currentHealth;
 
-          if gt infectionDamage 0;
+          if and gt currentHealth 0 gt infectionDamage 0;
             set_color new_pixel COLOR_X1_GREEN0;
           end;
 
@@ -206,12 +208,15 @@ extended:
         code: |
           var int infectionDamage; # would be cool if I could get the offset so I could change specific pixels to show a number
           var ptr BattleUnit myUnit;
+          var int currentHealth;
 
           if or eq blit_part blit_item_big eq blit_part blit_item_floor;
             item.getBattleUnit myUnit;
             if neq myUnit null;
               myUnit.getTag infectionDamage Tag.CURRENT_INFECTION_DAMAGE;
-              if gt infectionDamage 0;
+              myUnit.getHealth currentHealth;
+
+              if and gt currentHealth 0 gt infectionDamage 0;
                 set_color new_pixel COLOR_X1_GREEN0;
               end;
             end;
