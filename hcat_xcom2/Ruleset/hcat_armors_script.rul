@@ -28,7 +28,7 @@ armors:
           if or ge numBurningTurns 1 eq finalDamageType 2;
             unit.setTag Tag.DIED_BY_FIRE 1;
           else;
-            rules.getRuleUnit myRuleUnit "STR_CHRYSSALID_TERRORIST";
+            rules.getRuleUnit myRuleUnit "STR_TENTACULAT_TERRORIST";
             unit.setSpawnUnit myRuleUnit;
             unit.setSpawnUnitInstantRespawn 0;
           end;
@@ -71,7 +71,7 @@ armors:
         battle_game.randomRange randomNumber 1 100;
 
         if and le randomNumber currentChance eq numBurningTurns 0;
-          rules.getRuleUnit myRuleUnit "STR_CHRYSSALID_TERRORIST";
+          rules.getRuleUnit myRuleUnit "STR_TENTACULAT_TERRORIST";
           unit.setSpawnUnit myRuleUnit;
           unit.setSpawnUnitInstantRespawn 0;
           unit.setHealth 0;
@@ -88,12 +88,8 @@ armors:
         unit.getTag diedByFire Tag.DIED_BY_FIRE;
         unit.getHealth remainingHealth;
 
-        if and eq diedByFire 1 le remainingHealth 0 eq sprite_index 72;
-          add sprite_index 100;
-        end;
-
         if and eq diedByFire 0 le remainingHealth 0 eq sprite_index 72;
-          mul sprite_offset 6;
+          mul sprite_offset 3;
         end;
 
         add sprite_index sprite_offset;

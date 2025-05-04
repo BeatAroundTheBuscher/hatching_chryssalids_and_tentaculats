@@ -1,0 +1,7 @@
+armors:
+  - type: ZOMBIE_ARMOR
+    # have to set it for normal death which is of course a pain for the transformation
+    # https://openxcom.org/forum/index.php?topic=11103.msg153157#msg153157
+    deathFrames: 3
+    corpseBattle:
+      - STR_ZOMBIE_CORPSE

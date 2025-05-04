@@ -1,0 +1,4 @@
+extraSprites:
+  - type: BIGOBS.PCK
+    files:
+      100: Resources/zombie_bigob.png

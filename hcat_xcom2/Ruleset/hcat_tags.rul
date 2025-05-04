@@ -1,0 +1,12 @@
+extended:
+  tags:
+    BattleUnit:
+      CURRENT_INFECTION_DAMAGE: int
+      TURN_BECAME_ZOMBIFIED: int
+      DIED_BY_FIRE: int
+    RuleItem:
+      CAN_DO_INFECTION_DAMAGE: int
+    BattleGame:
+      RESEARCH_LEVEL_CURE: int
+    RuleArmor:
+      CUMULATIVE_BURST_CHANCE_PER_TURN: int

@@ -1,29 +1,23 @@
 extended:
-  tags:
-    RuleItem:
-      CAN_DO_INFECTION_DAMAGE: int
+  tagsFile: Ruleset/hcat_tags.rul
 
 items:
   - type: STR_MEDI_KIT
-    painKiller: 3 # for statsfornerds
-    
-  - delete: TENTACULAT_WEAPON
+    painKiller: 3  # for statsfornerds
 
   - type: TENTACULAT_WEAPON
-    bigSprite: {mod: xcom2, index: 71}
-    meleeSound: {mod: xcom2, index: 42}
-    # strengthApplied: true
-    damageType: 7
-    accuracyMelee: 100
-    tuMelee: 15
-    battleType: 3
-    fixedWeapon: true
-    invWidth: 2
-    invHeight: 3
-    clipSize: -1
-    recover: false
-    # zombieUnit: STR_ZOMBIE
+    strengthApplied: false
+    zombieUnit: ""
     tags:
       CAN_DO_INFECTION_DAMAGE: 10
     damageBonus:
       strength: 0.5
+
+  - type: STR_ZOMBIE_CORPSE
+    weight: 22
+    bigSprite: 100
+    floorSprite: 50
+    invWidth: 2
+    invHeight: 3
+    battleType: 11
+    recover: false
