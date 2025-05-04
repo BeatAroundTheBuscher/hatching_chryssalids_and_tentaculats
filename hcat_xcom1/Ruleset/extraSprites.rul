@@ -1,0 +1,17 @@
+extraSprites:
+  - type: HCAT_ZOMBIE.PCK
+    subX: 32
+    subY: 40
+    width: 512
+    height: 240
+    files:
+      0: Resources/XCOM/ZOMBIE.png # 96
+      100: Resources/XCF/ZOMBIE_STERILE.png
+
+  - type: BIGOBS.PCK
+    files:
+      100: Resources/XCF/bigob_ZOMBIE_STERILE.png
+
+  - type: FLOOROB.PCK
+    files:
+      100: Resources/XCF/floorob_ZOMBIE_STERILE.png

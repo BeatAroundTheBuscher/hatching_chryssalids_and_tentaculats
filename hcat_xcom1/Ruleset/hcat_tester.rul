@@ -1,0 +1,26 @@
+alienRaces:
+  - id: STR_CHRYSSALID
+    members:
+      - STR_CHRYSSALID_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+      - STR_CHRYSSALID_TERRORIST
+
+
+armors:
+  - type: STR_POWER_SUIT_UC
+    damageModifier:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.8
+      - 1.0
+      - 1.0
+      - 0.0

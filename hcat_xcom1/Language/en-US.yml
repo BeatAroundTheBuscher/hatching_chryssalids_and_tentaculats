@@ -1,0 +1,4 @@
+en-US:  # yamllint disable-line rule:empty-values
+  STR_PAIN_KILLER: "CURE"
+  STR_MEDI_KIT_QUANTITIES_LEFT: "Cure>{ALT}{0}{ALT}{NEWLINE}Stim>{ALT}{1}{ALT}{NEWLINE}Heal>{ALT}{2}"
+  STR_ZOMBIE_CORPSE: "Zombie Corpse"

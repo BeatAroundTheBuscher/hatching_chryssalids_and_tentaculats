@@ -1,33 +1,23 @@
 extended:
-  tags:
-    RuleItem:
-      CAN_DO_INFECTION_DAMAGE: int
+  tagsFile: Ruleset/hcat_tags.rul
 
 items:
   - type: STR_MEDI_KIT
-    painKiller: 3 # for statsfornerds
-    
-  - delete: CHRYSSALID_WEAPON
+    painKiller: 3  # for statsfornerds
 
   - type: CHRYSSALID_WEAPON
-    weight: 3
-    bigSprite: {mod: xcom1, index: 61}
-    floorSprite: {mod: xcom1, index: 31}
-    handSprite: {mod: xcom1, index: 104}
-    meleeSound: {mod: xcom1, index: 49}
-    clipSize: -1
-    # strengthApplied: true
-    damageType: 7
-    accuracyMelee: 100
-    tuMelee: 15
-    battleType: 3
-    fixedWeapon: true
-    invWidth: 2
-    invHeight: 3
-    recover: false
-    # zombieUnit: STR_ZOMBIE
-    flatRate: true
+    strengthApplied: false
+    zombieUnit: ""
     tags:
       CAN_DO_INFECTION_DAMAGE: 10
     damageBonus:
       strength: 0.5
+
+  - type: STR_ZOMBIE_CORPSE
+    weight: 22
+    bigSprite: 100
+    floorSprite: 100
+    invWidth: 2
+    invHeight: 3
+    battleType: 11
+    recover: false

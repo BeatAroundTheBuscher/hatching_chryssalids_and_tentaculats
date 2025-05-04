@@ -1,0 +1,4 @@
+extraSounds:
+  - type: BATTLE.CAT
+    files:
+      100: Resources/XCF/Zombie_death.wav

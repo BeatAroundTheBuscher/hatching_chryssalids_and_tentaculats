@@ -1,0 +1,24 @@
+extended:
+  tagsFile: Ruleset/hcat_tags.rul
+
+items:
+  - type: STR_MEDI_KIT
+    scripts:
+      createItem: |
+        var int researchLevel;
+        var int temp;
+        var ptr RuleResearch researchTopic;
+
+        item.getPainKillerQuantity temp;
+        if eq temp 0;
+          return;
+        end;
+
+        battle_game.getTag researchLevel Tag.RESEARCH_LEVEL_CURE;
+        sub researchLevel 1; # either 0, 1, 2 as base
+        mul researchLevel 2;
+        sub researchLevel 1; # may become a problem?
+
+        item.setPainKillerQuantity researchLevel;
+
+        return;

@@ -9,8 +9,8 @@ extraStrings:
 ufopaedia:
   - id: STR_MEDI_KIT
     pages:
-    - title: STR_MEDI_KIT
-      text: STR_MEDI_KIT_UFOPEDIA
-    - title: STR_MEDI_KIT_ADDITIONAL
-      text: STR_MEDI_KIT_ADDITIONAL_UFOPAEDIA
+      - title: STR_MEDI_KIT
+        text: STR_MEDI_KIT_UFOPEDIA
+      - title: STR_MEDI_KIT_ADDITIONAL
+        text: STR_MEDI_KIT_ADDITIONAL_UFOPAEDIA
 

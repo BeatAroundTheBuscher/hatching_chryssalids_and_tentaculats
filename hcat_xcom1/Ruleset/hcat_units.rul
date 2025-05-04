@@ -1,0 +1,4 @@
+units:
+  - type: STR_ZOMBIE
+    deathSound: 100
+    spawnUnit: ""  # handle by script
