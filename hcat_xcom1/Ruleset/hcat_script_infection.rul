@@ -13,7 +13,7 @@ extended:
           var int currentBravery; # bravery should not be reduced < 10
           var int statsDamage;
           var int researchLevel;
-           var int temp;
+          var int temp;
 
           unit.getTag infectionDamage Tag.CURRENT_INFECTION_DAMAGE;
           battle_game.getTag researchLevel Tag.RESEARCH_LEVEL_CURE;

@@ -7,7 +7,6 @@ items:
       createItem: |
         var int researchLevel;
         var int temp;
-        var ptr RuleResearch researchTopic;
 
         item.getPainKillerQuantity temp;
         if eq temp 0;
