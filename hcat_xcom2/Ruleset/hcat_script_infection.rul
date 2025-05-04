@@ -67,6 +67,9 @@ extended:
           if eq temp 2; # don't affect tanks
             return;
           end;
+          if eq side1 1; # don`t infect units at alien side <c> pWWWa
+            return;
+          end;
 
           if gt to_health 0; # only if pierced
             unit.setTag Tag.CURRENT_INFECTION_DAMAGE infectionDamage;
